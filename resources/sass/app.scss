@@ -1,0 +1,220 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Fondo landing
+.bg-landing{
+    background-color: #023139;
+}
+
+.img-landing{
+    max-height: 526px !important; 
+    width: 100% !important;
+}
+
+.relative{
+    position: relative !important;
+}
+
+.absolute-img{
+    position: absolute !important;
+    top: 18% !important;
+    left: 46% !important;
+}
+
+.style-img-group{
+    margin: 0 auto !important;    
+}
+
+.absolute-play-text{
+    border-left: 2px solid #E8E8E8 !important;
+}
+
+.absolute-play{
+    position: absolute !important;
+    top: 10% !important;
+    left: 5% !important;
+    border-left: 2px solid #E8E8E8 !important;
+}
+
+.absolute-text-worlds {
+    position: absolute !important;
+    bottom: 15% !important;
+    left: 5% !important;
+    border-left: 2px solid #E8E8E8 !important;
+}
+
+.text-worlds {
+    color: #D9D9D9;
+}
+
+.absolute-menu{
+    position: absolute !important;
+    top: 10% !important;
+    right: 5% !important;
+}
+
+.absolute-logos-social {
+    position: absolute !important;
+    bottom: 20% !important;
+    right: 5% !important;
+}
+
+.wrapper {
+    display: block;
+}
+
+.block {
+    display: block;
+}
+
+.text-web {
+    margin-top: -5px;
+}
+
+.text-trailer {
+    margin-left: 57px !important;
+    margin-top: -12px !important
+}
+
+.more_info {
+    background-color: #000000 !important;
+}
+
+.collapsed {
+    text-decoration: none;
+}
+
+// weapons
+.absolute-img-weapons{
+    top: 8% !important;
+}
+
+.absolute-text-enmedio {
+    position: absolute !important;
+    top: 50% !important;
+    right: 50% !important;
+    border-left: 2px solid #E8E8E8 !important;
+}
+
+.bg-weapons {
+    background-color: #040404;
+}
+
+.img-wapons {
+    max-height: 526px !important; 
+    width: 100% !important
+}
+
+.title-weapons {
+    font-size: 24px;
+}
+
+// Menu
+#menubar {
+    min-width: 200px;
+    max-width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -200px;
+    z-index: 999;
+    background: #023139;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#menubar.active {
+    margin-left: 200px;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.ul-menu li {
+    position: relative; 
+    line-height: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+.ul-menu li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.ul-menu li a:hover {
+    color: #023139;
+}
+
+.ul-menu li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 3px;
+    background-color: #1c1c1c;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+
+.ul-menu li:before {
+    color: #fff;
+    background-color: #5AE9F3;
+}
+
+.ul-menu li:hover:before,
+.ul-menu li.open:hover:before {
+    width: 100%;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+
+@media (max-width: 768px) {
+
+    #menubar {
+        margin-left: -200px;
+    }
+
+    #menubar.active {
+        margin-left: 200px;
+    }
+
+    .img-landing{
+        height: 450px !important; 
+    }
+
+    .img-wapons {
+        height: 400px;
+    }
+    
+    .absolute-text-enmedio {
+        right: 0 !important;
+    }
+
+}
