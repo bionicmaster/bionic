@@ -40,7 +40,8 @@
                 <div class="border-div">
                     <div class="absolute-play">
                         <img    src="/img/play.svg" class="img-fluid ml-3" 
-                                width="35" height="35">
+                                width="35" height="35"
+                                @click="video()">
                         <span class="text-white small text-web">
                             WEB 
                             <span  class="block text-white text-trailer font-weight-bold">
@@ -61,6 +62,18 @@
                     </div>
                 </div>
 
+            </div>
+
+            <!-- video -->
+            <div v-if="isVideo" class="absolute-video">
+                <i  class="fas fa-times text-light fa-2x float-right close-video mr-3"
+                    @click="closeVideo()">
+                </i>
+                <iframe width="100%"
+                        height="95%"
+                        src="https://www.youtube.com/embed/85MppyLJHz0"  
+                        allowfullscreen>
+                </iframe>
             </div>
 
             <!-- logo del menu -->
@@ -84,7 +97,7 @@
                     <div class="card-header" role="tab" id="headingTwo1">
                         <a class="collapsed float-right text-white" data-toggle="collapse" data-parent="#more_info" href="#collapseTwo1"
                             aria-expanded="false" aria-controls="collapseTwo1">
-                            <h5 class="mb-0">
+                            <h5 class="mb-0 small">
                                 <i class="fas fa-angle-down rotate-icon">
                                 </i>
                                 MORE INFO
@@ -141,7 +154,7 @@
 		},
 		data() {
 			return {
-				
+				isVideo: false
 			}
 		},
 		created(){
@@ -151,6 +164,18 @@
 
             menu() {
                 $('#menubar').toggleClass('active');
+            },
+            
+            video() {
+                this.isVideo = true;
+                $('.img-landing').css("opacity", "0.2");
+                $('.more_info').css("opacity", "0.2");
+            },
+
+            closeVideo() {
+                this.isVideo = false;
+                $('.img-landing').css("opacity", "1");
+                $('.more_info').css("opacity", "1");
             }
 
 		},

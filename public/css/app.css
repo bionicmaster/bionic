@@ -10918,9 +10918,21 @@ a.text-dark:focus {
   border-left: 2px solid #E8E8E8 !important;
 }
 
+.absolute-video {
+  position: absolute !important;
+  top: 30% !important;
+  width: 100%;
+  height: 42%;
+  background-color: #000000;
+}
+
+.close-video {
+  margin-top: -10px !important;
+}
+
 .absolute-text-worlds {
   position: absolute !important;
-  bottom: 15% !important;
+  bottom: 8% !important;
   left: 5% !important;
   border-left: 2px solid #E8E8E8 !important;
 }
@@ -10933,11 +10945,12 @@ a.text-dark:focus {
   position: absolute !important;
   top: 10% !important;
   right: 5% !important;
+  cursor: pointer;
 }
 
 .absolute-logos-social {
   position: absolute !important;
-  bottom: 20% !important;
+  bottom: 15% !important;
   right: 5% !important;
 }
 
@@ -11071,7 +11084,7 @@ a[data-toggle=collapse] {
   }
 
   .img-landing {
-    height: 450px !important;
+    height: 480px !important;
   }
 
   .img-wapons {

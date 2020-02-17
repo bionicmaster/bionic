@@ -2076,16 +2076,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: [],
   components: {},
   data: function data() {
-    return {};
+    return {
+      isVideo: false
+    };
   },
   created: function created() {},
   methods: {
     menu: function menu() {
       $('#menubar').toggleClass('active');
+    },
+    video: function video() {
+      this.isVideo = true;
+      $('.img-landing').css("opacity", "0.2");
+      $('.more_info').css("opacity", "0.2");
+    },
+    closeVideo: function closeVideo() {
+      this.isVideo = false;
+      $('.img-landing').css("opacity", "1");
+      $('.more_info').css("opacity", "1");
     }
   },
   mounted: function mounted() {}
@@ -37616,7 +37641,48 @@ var render = function() {
         _vm._v(" "),
         _vm._m(1),
         _vm._v(" "),
-        _vm._m(2),
+        _c("div", { staticClass: "absolute-play-text" }, [
+          _c("div", { staticClass: "border-div" }, [
+            _c("div", { staticClass: "absolute-play" }, [
+              _c("img", {
+                staticClass: "img-fluid ml-3",
+                attrs: { src: "/img/play.svg", width: "35", height: "35" },
+                on: {
+                  click: function($event) {
+                    return _vm.video()
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm._m(2)
+            ]),
+            _vm._v(" "),
+            _vm._m(3)
+          ])
+        ]),
+        _vm._v(" "),
+        _vm.isVideo
+          ? _c("div", { staticClass: "absolute-video" }, [
+              _c("i", {
+                staticClass:
+                  "fas fa-times text-light fa-2x float-right close-video mr-3",
+                on: {
+                  click: function($event) {
+                    return _vm.closeVideo()
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("iframe", {
+                attrs: {
+                  width: "100%",
+                  height: "95%",
+                  src: "https://www.youtube.com/embed/85MppyLJHz0",
+                  allowfullscreen: ""
+                }
+              })
+            ])
+          : _vm._e(),
         _vm._v(" "),
         _c("div", { staticClass: "absolute-menu" }, [
           _c("i", {
@@ -37630,9 +37696,9 @@ var render = function() {
           })
         ]),
         _vm._v(" "),
-        _vm._m(3),
+        _vm._m(4),
         _vm._v(" "),
-        _vm._m(4)
+        _vm._m(5)
       ]
     )
   ])
@@ -37681,43 +37747,36 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "absolute-play-text" }, [
-      _c("div", { staticClass: "border-div" }, [
-        _c("div", { staticClass: "absolute-play" }, [
-          _c("img", {
-            staticClass: "img-fluid ml-3",
-            attrs: { src: "/img/play.svg", width: "35", height: "35" }
-          }),
-          _vm._v(" "),
-          _c("span", { staticClass: "text-white small text-web" }, [
-            _vm._v(
-              "\n                            WEB \n                            "
-            ),
-            _c(
-              "span",
-              { staticClass: "block text-white text-trailer font-weight-bold" },
-              [
-                _vm._v(
-                  "\n                                TRAILER\n                            "
-                )
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "absolute-text-worlds" }, [
-          _c("span", { staticClass: "text-white font-weight-bold ml-3" }, [
-            _vm._v(
-              "\n                            BUILDING BETTER WORLDS\n                        "
-            )
-          ]),
-          _vm._v(" "),
-          _c("span", { staticClass: "block small text-worlds col-md-5 ml-3" }, [
-            _vm._v(
-              "\n                            Durante siglos, cientificos de la corporación Weyland-Yulani han\n                            monitorizado el comportamiento de una forma de vida alienigena tan\n                            poderosa que su potencial como recurso militar parece ser ilimitado.\n                        "
-            )
-          ])
-        ])
+    return _c("span", { staticClass: "text-white small text-web" }, [
+      _vm._v(
+        "\n                            WEB \n                            "
+      ),
+      _c(
+        "span",
+        { staticClass: "block text-white text-trailer font-weight-bold" },
+        [
+          _vm._v(
+            "\n                                TRAILER\n                            "
+          )
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "absolute-text-worlds" }, [
+      _c("span", { staticClass: "text-white font-weight-bold ml-3" }, [
+        _vm._v(
+          "\n                            BUILDING BETTER WORLDS\n                        "
+        )
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "block small text-worlds col-md-5 ml-3" }, [
+        _vm._v(
+          "\n                            Durante siglos, cientificos de la corporación Weyland-Yulani han\n                            monitorizado el comportamiento de una forma de vida alienigena tan\n                            poderosa que su potencial como recurso militar parece ser ilimitado.\n                        "
+        )
       ])
     ])
   },
@@ -37767,7 +37826,7 @@ var staticRenderFns = [
                   }
                 },
                 [
-                  _c("h5", { staticClass: "mb-0" }, [
+                  _c("h5", { staticClass: "mb-0 small" }, [
                     _c("i", { staticClass: "fas fa-angle-down rotate-icon" }),
                     _vm._v(
                       "\n                                MORE INFO\n                            "
